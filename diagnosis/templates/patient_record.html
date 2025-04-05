@@ -1,0 +1,121 @@
+<!-- diagnosis/templates/patient_record.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Record</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #d0f0c0, #c0eaff);
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2d6a4f;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        button, .git-button {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #40916c;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .git-button:hover {
+            background-color: #2d6a4f;
+        }
+
+        .notice {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ffeeba;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Patient Record</h2>
+
+        <!-- ⚠️ User Notice Section -->
+        <div class="notice">
+            ⚠️ <strong>Note:</strong> This is a prototype system built for demonstration purposes.<br>
+            Uploading general sounds or speech may not give accurate results.<br>
+            👉 Try using a <strong>sample lung sound</strong> (automatically used if no file uploaded).<br>
+            🔍 <strong>Click below</strong> to explore how this works using Machine Learning.
+        </div>
+
+        <!-- Form Section -->
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label>Patient Name:</label>
+            <input type="text" name="name" required />
+
+            <label>Age:</label>
+            <input type="number" name="age" required />
+
+            <label>Address:</label>
+            <textarea name="address" rows="2" required></textarea>
+
+            <label>Symptoms:</label>
+            <textarea name="symptoms" rows="2" required></textarea>
+
+            <label>Weight (kg):</label>
+            <input type="text" name="weight" required />
+
+            <label>Blood Pressure (mmHg):</label>
+            <input type="text" name="bp" required />
+
+            <label>Any Existing Diseases:</label>
+            <textarea name="existing_diseases" rows="2"></textarea>
+
+            <label>Upload Lung Sound (Audio File):</label>
+            <input type="file" name="audio_file" accept="audio/*" required />
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- GitHub Redirect Button -->
+        <a href="https://github.com/Shivanissm/Detection-of-pulmonary-diseases-using-lung-sounds"
+           target="_blank"
+           class="git-button">
+           🔗 View ML Code on GitHub
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f0f4f8, #d0f0c0);
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        .result-box {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 500px;
+        }
+        h2 {
+            text-align: center;
+            color: #2d6a4f;
+        }
+        p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+        .prediction {
+            font-weight: bold;
+            color: #1b4332;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Prediction Result</h2>
+        <p><strong>Name:</strong> {{ name }}</p>
+        <p><strong>Age:</strong> {{ age }}</p>
+        <p><strong>Address:</strong> {{ address }}</p>
+        <p><strong>Symptoms:</strong> {{ symptoms }}</p>
+        <p><strong>Weight:</strong> {{ weight }}</p>
+        <p><strong>Blood Pressure:</strong> {{ bp }}</p>
+        <p><strong>Existing Diseases:</strong> {{ diseases }}</p>
+        <p class="prediction">Predicted Lung Condition: {{ predicted_disease }}</p>
+    </div>
+</body>
+</html>
